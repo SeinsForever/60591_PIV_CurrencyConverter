@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{CE7ED6E2-5F4D-4320-A301-80922F92A5AA}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="CurrencyConverter/CurrencyNames.cs">
+    <Files>
+      <File FileName="CurrencyConverter/MainPage.xaml" Line="40" Column="52" />
+      <File FileName="CurrencyConverter/MainViewModel.cs" Line="20" Column="1" />
+      <File FileName="CurrencyConverter/CurrencyNames.cs" Line="51" Column="17" />
+      <File FileName="CurrencyConverter/Platforms/MacCatalyst/Program.cs" />
+      <File FileName="CurrencyConverter/MainPage.xaml.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CurrencyConverter" expanded="True">
+            <Node name="CurrencyConverter" expanded="True">
+              <Node name="Platforms" expanded="True">
+                <Node name="MacCatalyst" expanded="True" />
+              </Node>
+              <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CurrencyConverter PreferredExecutionTarget="MyAppleMacCatalystID" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

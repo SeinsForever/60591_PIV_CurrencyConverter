@@ -1,0 +1,1 @@
+F:\Life\StudiesLife\Studies\PMU\GitHub\CurrencyConverter\CurrencyConverter\CurrencyConverter.csproj;x64
