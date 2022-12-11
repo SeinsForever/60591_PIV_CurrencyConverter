@@ -12,36 +12,85 @@
             VerticalOptions="Center">
 
             <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+                Text="For what date do you want to find the currency?"
+                HorizontalOptions="Center"/>
+
+            <DatePicker
+                MinimumDate="01/01/1950"
+                HorizontalOptions="Center"
+                MaximumDate="{Binding TodayDate}"
+                Date="{Binding UserDateTime}"/>
+            <Button
+               Text="Change"
+               HorizontalOptions="Center"
+               BackgroundColor="LightGray"
+               TextColor="Black"
+               WidthRequest="300"
+               IsEnabled="{Binding IsNotBusy}"
+               Command="{Binding GetCurrencyInfoFromApiCommand}"/>
+
+            <Line X2="10000" Stroke="Gray"/>
 
             <Label
-                Text="{Binding FindableDateTime, StringFormat='{}Курс валют на {0:dd MMMM yyyy HH:mm}'}"
-                SemanticProperties.HeadingLevel="Level2"
-                FontSize="18"
-                HorizontalOptions="Center" />
-            <Label
-                Text="{Binding RateValue}"
-                SemanticProperties.HeadingLevel="Level2"
-                FontSize="18"
-                HorizontalOptions="Center" />
+               Text="{Binding FindableDateTime, StringFormat='{}Курсы валют найдены на {0:dd MMMM yyyy HH:mm}'}"
+               SemanticProperties.HeadingLevel="Level2"
+               HorizontalTextAlignment="Center"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
 
             <Picker
-                Title ="Select a currency"
-                ItemsSource="{Binding ListOfValutes}"/>
+                Title="Select IN currency:"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Center"
+                WidthRequest="300"
+                ItemsSource="{Binding ListOfCurrency}"
+                SelectedIndex="{Binding SelectedCurrencyIn}"/>
+
+            <Button Text="↑↓Swap"
+                    HorizontalOptions="Center"
+                    WidthRequest="300"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    IsEnabled="{Binding IsNotBusy}"
+                    Command="{Binding ChangeCommand}"/>
+
+            <Picker Title ="Select OUT currency:"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center"
+                    WidthRequest="300"
+                    ItemsSource="{Binding ListOfCurrency}"
+                    SelectedIndex="{Binding SelectedCurrencyOut}"/>
+
+            <Label
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Center">
+                <Label.Text>
+                    <MultiBinding StringFormat="1 {0} равен {1:F2} {2}" >
+                        <Binding Path="nameOfCurrencyIn"/>
+                        <Binding Path="rateValue"/>
+                        <Binding Path="nameOfCurrencyOut"/>
+                    </MultiBinding>
+                </Label.Text>
+            </Label>
+
+            <Line X2="10000" Stroke="Gray"/>
 
             <Entry Placeholder="Value"
+                   MaximumWidthRequest="300"
+                   HorizontalTextAlignment="Center"
                    Text="{Binding UserCurrencyValue}"/>
 
-            <Picker
-                Title ="Select a currency"
-                ItemsSource="{Binding ListOfValutes}"
-                SelectedItem="{Binding SelectedValute}"/>
 
+ 
             <Entry Placeholder="Value"
-                   Text="{Binding convertedCurrencyValue}"/>
+                   IsReadOnly="True"
+                   MaximumWidthRequest="300"
+                   HorizontalTextAlignment="Center"
+                   Text="{Binding convertedCurrencyValue,
+                            StringFormat='{0:F2}'}"/>
 
         </VerticalStackLayout>
     </ScrollView>
