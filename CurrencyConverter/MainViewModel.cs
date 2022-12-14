@@ -34,7 +34,7 @@ public partial class MainViewModel : ObservableObject
                 foreach (var valutes in result.Valute.ListOfValuteItem)
                 {
                     listOfCurrency.Add(valutes.Name);
-                    listOfValue.Add(valutes.Value);
+                    listOfValue.Add(valutes.Value / valutes.Nominal);
                 }
 
                 break;
@@ -100,7 +100,7 @@ public partial class MainViewModel : ObservableObject
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsNotBusy))]
-    private bool isBusy;
+    bool isBusy;
 
     public bool IsNotBusy => !IsBusy;
 
